@@ -1,0 +1,193 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: #fff;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    
+}
+
+.left{
+    float: left;
+}
+
+.right{
+    float: right;
+}
+
+
+.clear{
+    clear: both;
+}
+
+
+
+.clearboth::after {
+    content: '';
+    clear: both;
+    display: block;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+}
+
+
+
+.flexbox {
+    display: -webkit-flex;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+
+.column-title{
+    margin: 40px 0;
+}
+
+
+.column-title h2{
+    text-align: center;
+}
+
+
+
+.column-title h3{
+    padding-left: 10px;
+    border-left: 8px solid #0281E8;
+    text-align: left;
+}
+
+
+.column-text p{
+    text-indent: 2em;
+    line-height: 30px;
+}
+
+
+.column-img{
+    overflow: hidden;
+}
+
+.column-img img{
+    vertical-align: top;
+}
+
+
+.current-nav{
+    color: #fff !important;
+    font-size: 20px !important;
+    background-color: #09d2fe !important;
+    border-bottom: 2px solid #ffee34 !important;
+}
+
+
+#header{
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.087);
+}
+
+
+.top{
+    background-color: #09d2fe;
+}
+
+.loginbar li{
+    float: right;
+    height: 35px;
+    font-size: 14px;
+    color: #fff;
+    line-height: 35px;
+}
+
+.loginbar li:first-child{
+    float: left;
+    font-weight: 900;
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.loginbar li:first-child span{
+    color: #1E90FF;
+}
+
+.loginbar li a:hover{
+    text-decoration: underline;
+}
+
+.loginbar li:first-child a:hover{
+    text-decoration: none;
+}
+
+/* banner start */
+.banner-wrapper {
+    height: 520px;
+    color: #fff;
+    background: url(../image/T0011.png) no-repeat center/cover;
+}
+
+.child-banner{
+    height: 420px;
+    background: url(../image/T0011.png) no-repeat center/cover;
+}
+
+.nav {
+    background-color: #fff;
+}
+
+.nav li{
+    width: 20%;
+    height: 60px;
+    float: left;
+    text-align: center;
+}
+
+.nav li a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    font-size: 18px;
+    line-height: 60px;
+}
+
+.nav li a:hover {
+   text-decoration: underline;
+   color: #fff;
+   background-color:#09d2fe;
+}
+
+
+.copyright {
+    height: 60px;
+    font-size: 12px;
+    text-align: center;
+    line-height: 60px;
+    background-color:#09d2fe;
+    color: #fff;
+}
+
+
+
+
+

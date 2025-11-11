@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="css/loginregister.css">
+    <title>登录</title>
+</head>
+<body>
+    <div id="bg-box">
+        <div class="top">
+            <ul class="loginbar clearboth container">
+                <li><a href="index.html">White<span>Album</span></a></li>
+                <li id="loginStatusItem">
+                    <a href="login.html" id="loginLink">登录</a>
+                    <div id="logoutPanel" style="display: none;">
+                        <span>已登录</span>
+                        <a href="#" id="logoutLink">注销</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <form action="javascript:void(0);" method="POST" class="rigister-form" id="loginForm">
+            <h2>登录</h2>
+            <div id="loginError" class="error-message" style="text-align: center; color: red; margin-bottom: 15px; display: none;"></div>
+            <div class="account-bar">
+                <label for="loginAccount">账号：</label>
+                <input type="text" id="loginAccount" name="loginAccount" value="2330416033" readonly>
+            </div>
+            <div class="account-bar">
+                <label for="loginPassword">密码：</label>
+                <input type="password" id="loginPassword" name="loginPassword" value="password" readonly>
+            </div>
+            <div class="account-bar">
+                <label for="captcha">验证码：</label>
+                <input type="text" id="captcha" name="captcha" placeholder="请输入验证码">
+                <div class="error-message" id="captchaError"></div>
+                <div id="captchaContainer" style="display: inline-block; margin-left: 10px; vertical-align: middle;"></div>
+            </div>
+            <div class="submit-bar"><input type="submit" value="提交"></div>
+        </form>
+    </div>
+    
+    <script>
+
+        // 生成验证码
+        function generateCaptcha() {
+            const chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+            let captcha = '';
+            for (let i = 0; i < 4; i++) {
+                captcha += chars.charAt(Math.floor(Math.random() * chars.length));
+            }
+            return captcha;
+        }
+
+        // 显示验证码
+        function displayCaptcha(captcha) {
+            const container = document.getElementById('captchaContainer');
+            container.innerHTML = '';
+            const canvas = document.createElement('canvas');
+            canvas.width = 100;
+            canvas.height = 40;
+            const ctx = canvas.getContext('2d');
+            
+            // 背景
+            ctx.fillStyle = '#f3f3f3';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            
+            // 干扰线
+            for (let i = 0; i < 5; i++) {
+                ctx.strokeStyle = `rgb(${Math.random() * 255},${Math.random() * 255},${Math.random() * 255})`;
+                ctx.beginPath();
+                ctx.moveTo(Math.random() * canvas.width, Math.random() * canvas.height);
+                ctx.lineTo(Math.random() * canvas.width, Math.random() * canvas.height);
+                ctx.stroke();
+            }
+            
+            // 验证码文本
+            ctx.font = 'bold 24px Arial';
+            ctx.fillStyle = '#333';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText(captcha, canvas.width / 2, canvas.height / 2);
+            
+            container.appendChild(canvas);
+            return captcha;
+        }
+
+        // 初始化页面
+        document.addEventListener('DOMContentLoaded', function() {
+            // 检查登录状态
+            const isLoggedIn = sessionStorage.getItem('isLoggedIn') === 'true';
+            if (isLoggedIn) {
+                window.location.href = 'index.html';
+                return;
+            }
+
+            // 生成并显示验证码
+            const captcha = generateCaptcha();
+            currentCaptcha = displayCaptcha(captcha);
+
+            // 表单提交处理
+            document.getElementById('loginForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const captchaInput = document.getElementById('captcha').value.trim();
+                const errorElement = document.getElementById('captchaError');
+                
+                // 清除错误信息
+                errorElement.textContent = '';
+                
+                // 验证验证码
+                if (captchaInput.toUpperCase() !== currentCaptcha) {
+                    errorElement.textContent = '验证码错误';
+                    // 刷新验证码
+                    currentCaptcha = displayCaptcha(generateCaptcha());
+                    return;
+                }
+                
+                // 登录成功
+                sessionStorage.setItem('isLoggedIn', 'true');
+                window.location.href = 'index.html';
+            });
+        });
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+.role-card-wrapper{
+    margin-bottom: 40px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.role-card{
+    width: 31%;
+}
+
+.role-img{
+    height: 372px;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.137);
+    box-sizing: border-box;
+}
+
+.role-img img{
+    height: 100%;
+}
+
+.role-text{
+    padding: 20px;
+}
+
+.role-text h3{
+    color: #0281E8;
+    padding-bottom: 10px;
+}
+
+.role-card-wrapper2{
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.137);
+    box-sizing: border-box;
+}
+
+.role-card-wrapper2{
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+
+.role-card-wrapper2 .role-img2{
+    width: 25%;
+}
+
+.role-img2 img{
+    width: 100%;
+}
+
+.role-card-wrapper2 .role-text{
+    flex: 1;
+}
+
+
+.role-card.active {
+  transform: translateY(-10px) rotate(3deg);
+  filter: drop-shadow(0 5px 15px rgba(9,210,254,0.3));
+}
+
+ /* 响应式设计 */
+        @media (max-width: 992px) {
+            .role-card {
+                width: 48%;
+            }
+            
+            .role-card-wrapper2 .role-img2 {
+                width: 30%;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav li {
+                margin: 0 10px;
+            }
+            
+            .nav a {
+                font-size: 16px;
+                padding: 6px 10px;
+            }
+            
+            .role-card {
+                width: 100%;
+            }
+            
+            .role-card-wrapper2 {
+                flex-direction: column;
+            }
+            
+            .role-card-wrapper2 .role-img2 {
+                width: 50%;
+                margin-bottom: 20px;
+            }
+        }
+
+
+
+
+
+
+
+
+
+

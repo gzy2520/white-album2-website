@@ -1,0 +1,139 @@
+
+/* 图片画廊样式 */
+.image-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.gallery-item {
+    width: calc(50% - 10px);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.gallery-item img:hover {
+    transform: scale(1.05);
+}
+
+/* 调整视频尺寸 */
+.video-clip-card {
+    width: 24%; 
+}
+
+.video-clip-v {
+    height: 200px; 
+    position: relative;
+}
+
+.video-clip-v video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 图片轮播 */
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+}
+
+.image-container {
+    position: relative;
+    height: 200px;
+}
+
+.image-container img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.image-container img.active {
+    opacity: 1;
+}
+
+/* 音乐列表样式 */
+
+.video-column-music ul > li {
+	background: rgba(255, 255, 255, 0.85);
+	border-radius: 8px;
+	padding: 15px;
+	margin-bottom: 15px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.video-column-music p {
+	display: inline-block;
+	width: 70%;
+	height: 54px;
+	line-height: 54px;
+	vertical-align: middle;
+	font-size: 16px;
+	border-bottom: 1px solid #3498db;
+	padding-left: 10px;
+}
+
+.video-column-music p:hover {
+	color: #e74c3c;
+	cursor: pointer;
+}
+
+.video-column-music audio {
+	width: 25%;
+	margin-left: 20px;
+	vertical-align: middle;
+	border-radius: 30px;
+}
+
+
+/* PDF区域样式 */
+.pdf-section {
+	background: rgba(255, 255, 255, 0.9);
+	padding: 25px;
+	border-radius: 10px;
+	margin-bottom: 40px;
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.pdf-item {
+	margin-bottom: 15px;
+	padding: 12px 15px;
+	background: rgba(236, 240, 241, 0.7);
+	border-radius: 6px;
+	transition: background 0.3s ease;
+}
+
+.pdf-item:hover {
+	background: rgba(189, 195, 199, 0.5);
+}
+
+.pdf-link {
+	display: flex;
+	align-items: center;
+	color: #2980b9;
+	font-size: 16px;
+	font-weight: 500;
+}
+
+.pdf-icon {
+	width: 32px;
+	margin-right: 15px;
+}
+
+.pdf-link:hover {
+	color: #e74c3c;
+}

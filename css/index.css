@@ -1,0 +1,124 @@
+/* 首页 */
+.column-one-content{
+    color: #fff;
+    background-color: #57E0FF;
+    background: url(../image/sys_07100.png) no-repeat center bottom/cover;
+    background-attachment: fixed;
+}
+
+.cilumn-one-img img{
+    width: 100%;
+}
+
+.column-one-text{
+    padding: 20px 40px;
+}
+
+.column-two{
+    height: 250px;
+}
+
+.column-two-card{
+    width: 15%;
+    height: 180px;
+    margin-right: 24px;
+    text-align: center;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.153);
+    transition: all .3s linear;
+}
+
+.column-two-card:last-child{
+    margin: 0;
+}
+
+.column-two-card h2{
+    padding-top: 50px;
+    font-size: 42px;
+    color: #09d2fe;
+    transition: all .3s linear;
+}
+
+.column-two-card h3{
+    color: #006176;
+    margin-bottom: 5px;
+}
+
+.column-two-card p{
+    display: none;
+    padding: 5px;
+    color: #fff;
+}
+
+.column-two-card:hover{
+    height: 200px;
+    background-color:#09d2fe;
+}
+
+.column-two-card:hover h2{
+    padding-top: 5px;
+    color: #fff;
+}
+
+.column-two-card:hover p{
+    display: block;
+}
+
+.index-video{
+    width: 80%;
+    margin-left: 120px;
+}
+
+.index-video video{
+    vertical-align: top;
+}
+
+
+.column-four-content {
+  display: flex; 
+  gap: 8px; 
+}
+
+.column-four-img {
+  flex: 1; 
+  overflow: hidden; 
+}
+
+
+.column-four-img img {
+  width: 100%; 
+  height: auto;
+  transition: transform 0.3s ease; 
+  object-fit: contain; 
+}
+
+.column-four-img img:hover{
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+
+.column-four{
+    margin-bottom: 40px;
+}
+
+
+@keyframes trail {
+    from {
+        transform: scale(1);
+        opacity: 1;
+    }
+    to {
+        transform: scale(2);
+        opacity: 0;
+    }
+}
+
+.top .loginbar li {
+  white-space: nowrap; /* 防止换行 */
+  padding: 0 8px; /* 调整间距 */
+}
+
+

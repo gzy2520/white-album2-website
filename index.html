@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <title>白色相簿2</title>
+</head>
+
+<body>
+    <script>
+// 统一登录状态管理
+document.addEventListener('DOMContentLoaded', function() {
+  const isLoggedIn = sessionStorage.getItem('isLoggedIn') === 'true';
+  const loginLink = document.getElementById('loginLink');
+  const logoutPanel = document.getElementById('logoutPanel');
+  const logoutLink = document.getElementById('logoutLink');
+  const registerItem = document.getElementById('registerItem');
+  
+  if (isLoggedIn) {
+    loginLink.style.display = 'none';
+    logoutPanel.style.display = 'block';
+    if(registerItem) registerItem.style.display = 'none';
+  } else {
+    loginLink.style.display = 'block';
+    logoutPanel.style.display = 'none';
+    if(registerItem) registerItem.style.display = 'list-item';
+  }
+  
+  if (logoutLink) {
+    logoutLink.addEventListener('click', function(e) {
+      e.preventDefault();
+      sessionStorage.removeItem('isLoggedIn');
+      window.location.reload();
+    });
+  }
+});
+</script>
+	<audio id="bgm" loop style="display: none;">
+		<source src="music/white album.ogg" type="audio/ogg">
+	</audio>
+<div class="top">
+  <ul class="loginbar clearboth container" id="mainLoginBar">
+    <li><a href="index.html">White<span>Album</span></a></li>
+    <li id="loginStatusItem">
+      <a href="login.html" id="loginLink">登录</a>
+      <div id="logoutPanel" style="display: none;">
+        <span>已登录</span>
+        <a href="#" id="logoutLink">注销</a>
+      </div>
+    </li>
+  </ul>
+</div>
+    <div id="header">
+        <ul class="nav clearboth container">
+            <li><a href="index.html">首页</a></li>
+            <li><a href="role.html">角色介绍</a></li>
+            <li><a href="appreciate.html">内容欣赏</a></li>
+            <li><a href="story.html">故事情节&nbsp;</a></li>
+            <li><a href="others.html">&nbsp;其他内容</a></li>
+        </ul>
+    </div>
+    <div class="banner-wrapper clear"></div>
+    <div class="container">
+        <div class="column-title">
+            <h2>剧情简介</h2>
+        </div>
+        <div class="column-one-content">
+            <div class="column-one-text column-text">
+              <p>故事的展开由三章组成:</p>
+              <p>&nbsp; &nbsp; &nbsp; 第一章中所描绘的是，主人公的高中时代。本作春希与两位女主角（小木曾雪菜、冬马和纱），围绕着乐队的练习，来增进三人的羁绊，以此来展开剧情与雪菜的背叛，和和纱的告别。对于春希而言无法忘却的事已经过去了三年.</p>
+              <p>&nbsp; &nbsp; &nbsp; 第二章描绘的是，作为大学生的春希与雪菜，与新登场的三位女主角（杉浦小春、和泉千晶、风冈麻理）的故事</p>
+			  <p>&nbsp;closing chapter中，只有在完成雪菜线后，最终章coda才会开始。在那之后两年，成为职场人的春希前往斯特拉斯堡出差。与五年不曾相见的和纱的再会究竟是……</p>
+            </div>
+        </div>
+			<div class="column-two clearboth">
+		<div class="column-title">
+			<h2>制作人员</h2>
+		</div>
+		<div class="column-two-card left">
+			<h2>01</h2>
+			<h3>剧本与导演</h3>
+			<p>丸户史明（总编剧/导演）</p>
+		</div>
+		<div class="column-two-card left">
+			<h2>02</h2>
+			<h3>角色原画</h3>
+			<p>なかむらたけし（主原画师）</p>
+		</div>
+		<div class="column-two-card left">
+			<h2>03</h2>
+			<h3>音乐制作</h3>
+			<p>石川真也、中泽伴行、衣笠道雄</p>
+		</div>
+		<div class="column-two-card left">
+			<h2>04</h2>
+			<h3>TV动画导演</h3>
+			<p>安藤正臣（SATELIGHT制作）</p>
+		</div>
+		<div class="column-two-card left">
+			<h2>05</h2>
+			<h3>制作统筹</h3>
+			<p>下川直哉（Aquaplus社长）</p>
+		</div>
+		<div class="column-two-card right">
+			<h2>06</h2>
+			<h3>声优阵容</h3>
+			<p>米泽圆（雪菜）<br>生天目仁美（冬马）<br>水岛大宙（春希）</p>
+		</div>
+	</div>
+        <div class="column-three clear">
+            <div class="column-title">
+                <h2>《白色相簿2》TV片头</h2>
+            </div>
+            <div class="index-video">
+              <video src="video/tvoplow.mp4" width="100%" height="100%" controls></video>
+            </div>
+        </div>
+        <div class="column-four">
+            <div class="column-title">
+                <h2>同人作品&nbsp;</h2>
+            </div>
+            <div class="column-four-content clearboth">
+                <div class="column-four-img"><img src="image/tr1.jpg" width="100%" height="100%" alt=""/> </div>
+                <div class="column-four-img"><img src="image/tr2.jpg" width="100%" height="100%" alt=""/> </div>
+                <div class="column-four-img"><img src="image/tr3.jpg" width="100%" height="100%" alt=""/> </div>
+                <div class="column-four-img"><img src="image/tr5.jpg" width="100%" height="100%" alt=""/> </div>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+      web课程 龚志远2330416033
+  </div>
+	
+<script src="./js/index.js"></script>
+</body>
+
+</html>
